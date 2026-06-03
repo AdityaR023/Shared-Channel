@@ -1,0 +1,118 @@
+🚀 Project Name
+SmartQnA – An Open-Source Multi-Modal Smartphone Assistant
+ 
+📌 Objective
+Build an open-source AI-powered Q&A system focused only on smartphones, supporting text and images, with APIs + UI, proper testing, and documentation.
+ 
+🧩 Core Components
+1. 🔍 Search API (Document Retrieval)
+API-only service
+Handles indexing + search from knowledge base
+Backed by Elasticsearch / OpenSearch -> or open-source framework
+Deliverables:
+REST API
+Swagger/OpenAPI documentation
+Postman collection
+BDD test cases (Cucumber)
+ 
+2. 💬 Completions API (Chat Engine)
+Responsible for answering user queries
+Uses Search API for retrieval (RAG style)
+Includes security + guardrails
+Features:
+API + UI
+Query filtering (only smartphone-related questions allowed)
+Filters in UI:
+Document source
+Device brand/model
+Deliverables:
+REST API
+Basic web UI (simple frontend)
+Postman collection
+ 
+3. 📥 Data Ingestion Pipeline
+UI-based ingestion system
+Supports:
+PDF
+CSV
+HTML
+Video transcripts
+Processing:
+Convert all inputs → Markdown format
+Store in search engine
+Deliverables:
+Upload UI
+Ingestion service
+Indexing into OpenSearch/Elasticsearch
+ 
+🏗️ Overall Architecture
+A simple modular architecture:
+User → UI → Completions API → Search API → Database
+                       ↑
+               Guardrails / Prompts
+
+Ingestion UI → Ingest API → Processing → DB Index
+
+ 
+🤖 Multi-Modal Capability
+Text-based Q&A
+Image-based queries (basic level – metadata or caption-based retrieval is fine)
+ 
+🛡️ Guardrails
+Reject unrelated queries
+Restrict domain to smartphones only
+Basic safety checks:
+No harmful or irrelevant queries
+Input validation
+ 
+🧠 Prompt Templates
+Standardized prompts for:
+Question answering
+Context injection
+Filtering outputs
+ 
+🔐 Authentication
+Use JWT-based authentication
+Secure APIs
+ 
+📦 Required Deliverables
+APIs
+Search API
+Completions API
+Ingestion API
+Documentation
+Swagger/OpenAPI specs
+README (setup + architecture + usage)
+Testing
+BDD test cases
+API testing via Postman
+Collections
+Postman collection for all APIs
+ 
+🧰 Suggested Tech Stack (All Free & Open Source)
+Backend: Python (FastAPI)
+UI: React (or simple HTML + JS)
+Search DB: OpenSearch / Elasticsearch
+Auth: JWT
+Testing: Cucumber / Pytest + BDD
+API Docs: Swagger/OpenAPI
+ 
+✅ Nice-to-Have (Optional Enhancements)
+Chat history
+Feedback system (thumbs up/down)
+Basic analytics (top queries)
+Model abstraction (plug any free LLM later)
+ 
+📖 README Should Include
+Project overview
+Setup steps
+Architecture diagram
+API usage
+Sample queries
+ 
+🎯 Expected Outcome
+A fully working open-source system where a user can:
+Upload smartphone-related content
+Ask questions via UI or API
+Get accurate, filtered answers
+Explore via structured APIs + docs
