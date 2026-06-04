@@ -116,3 +116,170 @@ Upload smartphone-related content
 Ask questions via UI or API
 Get accurate, filtered answers
 Explore via structured APIs + docs
+
+
+Each sprint, groups rotate across:
+ 
+Domain
+	
+Work
+
+
+🧠 Backend
+	
+Completions API, Guardrails
+
+
+🔍 Search/Data
+	
+OpenSearch, Indexing, Retrieval
+
+
+🎨 Frontend + QA
+	
+UI, Postman, BDD, Docs
+ 
+ 
+✅ Sprint 1 – Ingestion + Search Foundation
+🔄 Assignment:
+Group A → 🔍 Search/Data
+Group B → 🧠 Backend
+Group C → 🎨 Frontend + QA
+ 
+📌 Jira Tasks
+🔍 EPIC: Search & Ingestion Setup (Group A)
+TASK-101: Setup OpenSearch using Docker
+TASK-102: Design document schema (title, content, source, brand)
+TASK-103: Implement indexing API
+TASK-104: Build Search API (basic keyword search)
+TASK-105: Validate search results
+🧠 EPIC: API Design (Group B)
+TASK-106: Define API contracts (Search + Completions)
+TASK-107: Create base backend project structure
+TASK-108: Draft prompt templates (basic Q&A)
+ 
+🎨 EPIC: UI + QA Setup (Group C)
+TASK-109: Create React app skeleton
+TASK-110: Build file upload UI
+TASK-111: Create Postman collection (upload + search)
+TASK-112: Write BDD scenarios:
+Upload success
+Search returns results
+
+
+📊 📥 Data Collection Plan (SmartQnA Project)
+🎯 Goal
+Each team member collects smartphone-related data (100–200 records each) in multiple formats for ingestion.
+👉 Deadline: Tomorrow EOD
+👉 Target Total Dataset: ~600–1200 records
+👥 Individual Assignments
+🟢 Ayush
+Focus:
+2G & 3G era phones (legacy devices)
+Data to Collect:
+Old Nokia, Samsung, Motorola models
+Specs, launch year, price
+Formats:
+✅ CSV (preferred for structured data)
+✅ 2–3 PDFs
+🟢 Susmit
+Focus:
+4G smartphones (mid-range)
+Data:
+Xiaomi, Realme, Samsung M-series
+Specs, pricing, reviews
+Formats:
+✅ CSV
+✅ HTML pages (saved articles/blogs)
+🔵 Neel
+Focus:
+5G premium devices
+Data:
+iPhone, Samsung S-series, Pixel
+Latest specs, launch details
+Formats:
+✅ CSV
+✅ Video URLs (YouTube reviews)
+✅ Transcripts (manual or extracted summary)
+🔵 Sruti
+Focus:
+Smartphone brands & comparison data
+Data:
+Brand-wise catalogs
+Comparison tables (e.g., iPhone vs Samsung)
+Formats:
+✅ CSV (comparison tables)
+✅ HTML (comparison pages)
+🟡 Aditya
+Focus:
+Budget smartphones (< ₹20K)
+Data:
+Specs, pricing, key features
+Formats:
+✅ CSV
+✅ PDFs (spec sheets/reviews)
+🟡 Vilas
+Focus:
+Multimedia data + enrichment
+Data:
+Video reviews
+Image + description pairs (if possible)
+Formats:
+✅ Video URLs
+✅ Transcripts (important)
+✅ Mixed (text summaries)
+📌 Common Metadata Structure (MANDATORY)
+Each record should include:
+ 
+ 
+ 
+ 
+JSON
+ 
+{
+
+  "brand": "",
+
+  "model": "",
+
+  "generation": "2G/3G/4G/5G",
+
+  "launch_year": "",
+
+  "price_range": "",
+
+  "specs": "",
+
+  "source": "",
+
+  "content_type": "csv/pdf/html/video",
+
+  "description": ""
+
+}
+
+``
+
+Show more lines
+ 
+📂 Allowed Formats
+Each person should collect a mix of:
+CSV ✅ (mandatory)
+PDF ✅
+HTML ✅
+Video URL + transcript ✅
+📏 Per Person Target
+Data Type	Count
+Structured (CSV rows)	70–150
+Unstructured (PDF/HTML/Video)	10–20
+Total	~100–200
+
+
+📦 Folder Structure (Per Person)
+Plain Text
+/data/{name}/
+    ├── csv/
+    ├── pdf/
+    ├── html/
+    ├── video_links.txt
+    └── transcripts/
