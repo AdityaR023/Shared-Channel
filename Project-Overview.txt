@@ -283,3 +283,135 @@ Plain Text
     ├── html/
     ├── video_links.txt
     └── transcripts/
+
+
+
+
+🎨 SmartQnA – UI Components (Updated)
+🧭 1. Authentication Module
+Screens:
+✅ Login
+✅ Sign Up
+Sign Up Flow:
+User enters:
+Username / Email
+Password
+Domain selection (multi-select):
+2G
+3G
+4G
+5G
+(Optional: Sales, Reviews)
+Output:
+API Key + Secret generated
+JWT token issued on login
+📥 2. Data Ingestion (Document Management UI)
+Screen: Create / Manage Documents
+Features:
+✅ Create Document
+✅ View Documents
+✅ Update Document
+✅ Delete Document
+➕ Create Document Form:
+Inputs:
+Metadata (mandatory):
+Brand
+Model
+Generation (2G/3G/4G/5G)
+Launch Year
+Price Range
+Source
+✅ Domain (auto-filled or selectable)
+Content Input Options:
+File Upload:
+PDF
+CSV
+HTML
+Transcript
+OR Direct Text Input
+📋 Document List View:
+Table/Grid showing:
+Title / Model
+Brand
+Domain
+Upload Date
+Actions:
+Edit
+Delete
+View
+🔍 3. Search Module
+Screen: Search Documents
+Features:
+✅ Search bar
+✅ Filters:
+Domain (based on user access)
+Brand
+Generation
+Source
+Results:
+Document list showing:
+Title
+Short description
+✅ Relevance score
+Metadata preview
+💬 4. Chat (Q&A Module)
+Screen: Chat Interface
+Features:
+✅ Text input (ask questions)
+✅ Image upload (multi-modal support)
+✅ Domain-aware querying
+Output Display:
+✅ Answer
+✅ Confidence / Score
+✅ Sources:
+Reference documents
+Clickable links
+Controls:
+Filter (optional):
+Domain
+Brand
+🔐 5. Domain & Access Control UI
+Screen: User Profile / Access
+Features:
+✅ View assigned domains
+✅ (Optional Admin) Assign domains
+✅ Show API Key + Secret
+⚙️ 6. System Behavior (UI-Driven Logic)
+✅ Domain Awareness:
+UI only shows:
+Documents
+Filters
+Results
+👉 Based on user’s domain access
+✅ Index Mapping (Backend Reflection):
+Domains → Indexes:
+Plain Text
+2G → smartqna_2g  
+3G → smartqna_3g  
+4G → smartqna_4g  
+5G → smartqna_5g  
+
+
+✅ Guardrails (User Experience):
+If user asks:
+❌ Non-smartphone query
+👉 Show:
+“This system only supports smartphone-related queries.”
+🧩 7. Navigation Structure
+Plain Text
+Dashboard
+ ├── Chat
+ ├── Search
+ ├── Documents (Ingestion)
+ ├── Profile / Domains
+ └── Logout
+
+
+🎯 UI Summary
+ 
+Module	Purpose
+Authentication	User login + domain registration
+Ingestion	Upload + manage data
+Search	Retrieve documents
+Chat	Intelligent Q&A
+Domain Control	Secure access
