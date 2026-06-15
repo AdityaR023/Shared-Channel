@@ -1,0 +1,18 @@
+Slide 1 — Group C: Sprint 1 Progress
+Title: Group C — Frontend + QA | Sprint 1
+
+We were responsible for setting up the frontend and QA groundwork for SmartQnA. The sprint was split between actual building and getting familiar with tools we hadn't used before.
+
+TaskDescriptionStatusTASK-109FastAPI project setup with routing and templates✅ DoneTASK-110File upload UI with drag-drop and metadata form✅ DoneTASK-111Postman collection for Upload + Search APIs⏳ Sprint 2TASK-112BDD test scenarios⏳ Sprint 2
+
+Slide 2 — What We Built + What's Pending
+Title: Progress Breakdown + Next Steps
+What we got done:
+We set up the FastAPI project from scratch — pages are being served through Jinja2 templates, static files are mounted, and all routes are in place. Stub API endpoints are defined so our UI pages work independently without needing Group A or B to finish their side first.
+The upload page is fully functional — users can drag and drop files or browse manually, fill in metadata like brand, model, generation and source, and get per-file feedback on success or failure. We also built out the login and signup pages, including domain selection at signup which defines what data a user can access throughout the application.
+What's still pending and why:
+For Postman — we don't have access to it yet, so the collection hasn't been built. We spent the sprint understanding how API testing works, what the requests should look like, and what responses to expect. Once we have access in Sprint 2, putting the collection together should be straightforward.
+For BDD — same situation. Sprint 1 was about getting familiar with Gherkin syntax and how pytest-bdd works. We haven't started writing the actual scenarios yet, but that work will happen in Sprint 2 once Group A's APIs are live and we have something real to test against.
+Sprint 2 focus:
+
+Get Postman access sorted, write and run BDD scenarios against live APIs, and build out the Chat and Search pages.
