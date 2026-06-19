@@ -415,3 +415,27 @@ Ingestion	Upload + manage data
 Search	Retrieve documents
 Chat	Intelligent Q&A
 Domain Control	Secure access
+
+
+SPRINT2 work:
+ 
+🔍 EPIC: Search Enhancement & Optimization (Group A)
+(continuing Search ownership)
+TASK-201: Improve indexing quality
+TASK-202: Clean and standardize markdown content
+TASK-203: Tune search ranking (relevance, boosting)
+TASK-204: Enhance search API (filters, pagination, scoring)
+🧠 EPIC: Completions API (Group B)
+(continuing API/backend ownership)
+TASK-205: Create Completions API endpoint
+TASK-206: Integrate Search API with completions
+TASK-207: Implement prompt-based response generation
+TASK-208: Add error handling & response validation
+🎨 EPIC: Chat UI + QA (Group C)
+(continuing UI + QA ownership)
+TASK-209: Build chat interface (input + response rendering)
+TASK-210: Connect UI to Completions API
+TASK-211: Add Postman tests for chat API
+TASK-212: BDD scenarios:
+Ask smartphone question → valid answer
+Fallback when no results found
