@@ -1,8 +1,6 @@
 Slide 1 — Group C: Sprint 1 Progress
 Title: Group C — Frontend + QA | Sprint 1
 
-MISTRAL_API_KEY = "6WLoCjgpTkD144j4DXIROOtywkx5Jqez"
-
 We were responsible for setting up the frontend and QA groundwork for SmartQnA. The sprint was split between actual building and getting familiar with tools we hadn't used before.
 
 TaskDescriptionStatusTASK-109FastAPI project setup with routing and templates✅ DoneTASK-110File upload UI with drag-drop and metadata form✅ DoneTASK-111Postman collection for Upload + Search APIs⏳ Sprint 2TASK-112BDD test scenarios⏳ Sprint 2
