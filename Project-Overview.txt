@@ -439,3 +439,84 @@ TASK-211: Add Postman tests for chat API
 TASK-212: BDD scenarios:
 Ask smartphone question → valid answer
 Fallback when no results found
+
+
+🚀 SmartQnA – Integration Sprint Plan
+🎯 Goal (Next Week)
+Complete end-to-end integration of all core components:
+✅ Search API
+✅ Completions API (Chat)
+✅ UI (Frontend)
+✅ Data Ingestion Pipeline
+ 
+⚙️ Key Capabilities to Implement (Mandatory)
+Along with core integration, ensure the system supports:
+🔐 Guardrails
+Restrict queries strictly to smartphone-related content
+ 
+🛡️ Security Enhancements
+Prompt injection detection
+PII (Personally Identifiable Information) detection
+ 
+🔍 Hybrid Search
+Combine:
+Keyword search
+Basic semantic retrieval
+ 
+⚡ Caching
+Cache same queries and responses
+Improve performance for repeated requests
+ 
+🧪 Evaluation Pipeline (Must Have)
+🎯 Objective:
+Evaluate system quality using LLM-as-a-Judge
+ 
+✅ Requirements:
+Prepare evaluation dataset:
+User queries
+Ground-truth (expected answers)
+ 
+🔄 Evaluation Flow:
+User Query → System Response → LLM Judge → Score
+
+ 
+📊 Output:
+Relevance score
+Answer correctness
+Source grounding validation
+ 
+👥 Team Structure (2 Groups)
+ 
+🟢 Group A (Backend + Data Focus)
+Members:
+Ayush
+Susmit
+Sruti
+Responsibilities:
+Search API integration
+Completions API
+Ingestion pipeline
+Hybrid search implementation
+Caching
+Backend guardrails
+ 
+🔵 Group B (Frontend + QA + Evaluation)
+Members:
+Abrar
+Aditya
+Vilas
+Responsibilities:
+UI integration (Chat, Search, Upload)
+Frontend ↔ API integration
+Prompt injection + PII detection (basic checks)
+Postman + BDD testing
+Evaluation pipeline (LLM-as-a-Judge)
+Dataset preparation (queries + expected answers)
+ 
+✅ Final Deliverables
+✅ Fully integrated system (UI + APIs + ingestion)
+✅ Guardrails + security checks
+✅ Hybrid search capability
+✅ Caching implemented
+✅ Evaluation pipeline with scoring
+✅ Postman + BDD test coverage
