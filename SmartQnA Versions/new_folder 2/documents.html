@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartQnA — Documents</title>
+  <link rel="stylesheet" href="/static/css/styles.css"/>
+  <link rel="stylesheet" href="/static/css/documents.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="brand">📱 SmartQnA</span>
+  <div class="nav-links">
+    <a href="/chat">Chat</a>
+    <a href="/search">Search</a>
+    <a href="/upload" class="active">Documents</a>
+    <a href="/profile">Profile</a>
+    <span id="navbarUser" style="color:#aac4e0; font-size:14px;"></span>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<div class="container docs-container">
+
+  <!-- ── Page header ─────────────────────────────────────────────── -->
+  <div class="page-header">
+    <div>
+      <h2>Documents</h2>
+      <p class="page-sub">
+        Upload smartphone documents — metadata is extracted automatically.
+        Supported: PDF, CSV, HTML, JSON
+      </p>
+    </div>
+    <button class="btn-add" id="showUploadBtn">+ Upload Document</button>
+  </div>
+
+  <!-- ── Upload panel ────────────────────────────────────────────── -->
+  <!--
+    Change 1: No manual metadata form.
+    User just drops/selects a file and clicks Upload.
+    Group A's /generate-metadata endpoint extracts all metadata automatically.
+  -->
+  <div class="upload-panel" id="uploadPanel" style="display:none;">
+    <div class="panel-header">
+      <h3>Upload Document</h3>
+      <button class="panel-close" id="closeUploadBtn">✕</button>
+    </div>
+
+    <div class="alert error"   id="uploadError"></div>
+    <div class="alert success" id="uploadSuccess"></div>
+
+    <form id="uploadForm" novalidate>
+
+      <!-- Drop zone — file only, no metadata fields -->
+      <div class="dropzone" id="dropzone">
+        <span class="drop-icon">📂</span>
+        <p id="dropText">
+          Drag &amp; drop a file here, or <span class="browse-link">browse</span>
+        </p>
+        <p class="drop-hint">PDF · CSV · HTML · JSON</p>
+        <p class="drop-hint" style="color:#1F4E79; margin-top:6px;">
+          ✨ Metadata is extracted automatically — no manual entry needed
+        </p>
+        <input type="file" id="fileInput"
+               accept=".pdf,.csv,.html,.mhtml,.mht,.json" hidden/>
+      </div>
+
+      <!-- Selected file pill -->
+      <div class="file-selected" id="fileSelected" style="display:none;">
+        <span id="selectedFileName"></span>
+        <button type="button" class="remove-file" onclick="removeFile()">✕</button>
+      </div>
+      <span class="error-msg" id="fileErr">Please select a file</span>
+
+      <!-- Upload button -->
+      <div class="upload-actions" style="margin-top:20px;">
+        <button type="button" class="btn-cancel" id="closeUploadBtn2">Cancel</button>
+        <button type="submit" class="btn-submit" id="uploadBtn">
+          Upload &amp; Index
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- ── Filter bar ──────────────────────────────────────────────── -->
+  <div class="filter-bar">
+    <input type="text" id="searchFilter"
+           placeholder="Search by filename..."
+           class="filter-input"/>
+    <select id="typeFilter" class="filter-select">
+      <option value="">All types</option>
+      <option value="pdf">PDF</option>
+      <option value="csv">CSV</option>
+      <option value="html">HTML</option>
+      <option value="json">JSON</option>
+    </select>
+    <button class="btn-filter" onclick="loadDocuments()">Filter</button>
+  </div>
+
+  <!-- ── Document list ────────────────────────────────────────────── -->
+  <div id="docList"></div>
+
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <div class="empty-icon">📭</div>
+    <p>No documents uploaded yet.</p>
+    <p class="empty-sub">Upload a smartphone document to get started.</p>
+  </div>
+
+  <div class="loading-state" id="loadingState" style="display:none;">
+    <div class="spinner"
+         style="width:24px;height:24px;border-color:rgba(31,78,121,0.2);
+                border-top-color:#1F4E79;margin:0 auto 12px;"></div>
+    <p>Loading documents...</p>
+  </div>
+
+</div>
+
+<!-- ── Delete confirm modal ─────────────────────────────────────────── -->
+<div class="modal-backdrop" id="deleteModal" style="display:none;">
+  <div class="modal-card modal-sm">
+    <div class="modal-header">
+      <h3>Delete Document</h3>
+      <button class="panel-close" onclick="closeDeleteModal()">✕</button>
+    </div>
+    <p style="color:#555; font-size:14px; margin-bottom:20px;">
+      Are you sure you want to delete
+      <strong id="deleteDocName"></strong>?
+      This removes it from the search index permanently.
+    </p>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeDeleteModal()">Cancel</button>
+      <button class="btn-delete-confirm" id="confirmDeleteBtn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script src="/static/js/auth.js"></script>
+<script src="/static/js/documents.js"></script>
+</body>
+</html>
